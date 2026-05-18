@@ -156,7 +156,7 @@ param apimV2PrivateEndpointName string = ''
 
 @description('Network type for API Management service. Applies only to Premium and Developer SKUs.')
 @allowed([ 'External', 'Internal' ])
-param apimNetworkType string = 'External'
+param apimNetworkType string = 'Internal'
 
 @description('Use private endpoint for API Management service. Applies only to StandardV2 and PremiumV2 SKUs.')
 param apimV2UsePrivateEndpoint bool = true
