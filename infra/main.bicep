@@ -6,12 +6,12 @@ targetScope = 'subscription'
 @minLength(1)
 @maxLength(64)
 @description('Name of the the environment which is used to generate a short unique hash used in all resources.')
-param environmentName string
+param environmentName string = 'contoso-ai-hub-dev'
 
 @minLength(1)
 @description('Primary location for all resources (filtered on available regions for Azure Open AI Service).')
 @allowed([ 'uaenorth', 'southafricanorth', 'westeurope', 'southcentralus', 'australiaeast', 'canadaeast', 'eastus', 'eastus2', 'francecentral', 'japaneast', 'northcentralus', 'swedencentral', 'switzerlandnorth', 'uksouth' ])
-param location string
+param location string = 'eastus'
 
 @description('Tags to be applied to resources.')
 param tags object = { 'azd-env-name': environmentName, 'SecurityControl': 'Ignore' }
@@ -209,10 +209,10 @@ param enableAzureAISearch bool = true
 param enableAIGatewayPiiRedaction bool = true
 
 @description('Enable OpenAI realtime capabilities')
-param enableOpenAIRealtime bool = true
+param enableOpenAIRealtime bool = false
 
 @description('Enable Microsoft Entra ID authentication for API Management.')
-param entraAuth bool = false
+param entraAuth bool = true
 
 //
 // COMPUTE SKU & SIZE - SKUs and capacity settings for services
@@ -228,7 +228,7 @@ param apimSkuUnits int = 1
 param openAiSkuName string = 'S0'
 
 @description('OpenAI deployment capacity (in thousands of tokens per minute).')
-param deploymentCapacity int = 20
+param deploymentCapacity int = 10
 
 @description('Event Hub capacity units.')
 param eventHubCapacityUnits int = 1
