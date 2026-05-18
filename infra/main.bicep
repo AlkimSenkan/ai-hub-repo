@@ -191,7 +191,7 @@ param useAzureMonitorPrivateLinkScope bool = !useExistingVnet
 // FEATURE FLAGS - Deploy specific capabilities
 //
 @description('Create Application Insights dashboard.')
-param createAppInsightsDashboard bool = false
+param createAppInsightsDashboard bool = true
 
 @description('Deploy Azure Function App for processing usage data.')
 param provisionFunctionApp bool = false
